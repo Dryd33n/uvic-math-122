@@ -1,0 +1,46 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\title{MATH 122 I.C.A 4}
+\author{Dryden Bryson}
+\date{September 2024}
+
+\begin{document}
+
+\maketitle
+\newpage
+\section*{I.C.A 4}
+We have:
+
+\begin{table}[htp]
+\centering
+    \begin{tabular}{cc}
+       1. & $\neg r\leftrightarrow \neg q$\\ 
+       2. & $\neg q\to p$ \\ 
+       3. & $\neg p$ \\ 
+        \hline
+       4. & $\therefore r\land \neg p$
+    \end{tabular}
+\end{table}
+ \\
+To prove the validity of the argument:
+
+\begin{table}[htp]
+    \centering
+    \begin{tabular}{ccl}
+       5.  & $(\lnot r\rightarrow \lnot q) \land (\lnot q\rightarrow \lnot r)$ & Definition of Bi-conditional (1)\\
+       6.  & $\lnot r \rightarrow \lnot q$ & Conjunctive Simplification (5)\\
+       7.  & $q\rightarrow r$ & Contrapositive (6)\\
+       8.  & $\lnot p \rightarrow q$ & Contrapositive (2)\\
+       9.  & $q$ & Modus Ponens (3 \& 8)\\
+       10. & $r$ & Modus Ponens (9 \& 7)\\
+       11. & $r \land \lnot p$ & Conjunction introduction (10 \& 3)\\
+    \end{tabular}
+\end{table}
+ \\
+Using inference rules and logical equivalences we show on line 11 that the argument is valid by inferring $r \land \lnot p$ from the given premises. 
+
+
+\end{document}

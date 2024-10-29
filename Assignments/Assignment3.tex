@@ -1,0 +1,255 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[legalpaper, portrait, margin=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{xcolor}
+
+\title{Math 122 Ass. 3 Fall}
+\author{Dryden Bryson}
+\date{October 2024}
+
+\begin{document}
+
+\maketitle
+\newpage
+\section*{Question 1}
+\subsection*{a)}
+\subsection*{(i) \textcolor{gray}{\small{\textit{(a) $\Rightarrow$ (b)}}}:}
+If $A\subseteq B$, then all elements of the set $A$ exist in the set $B$, thus: $$\forall x\in A \Rightarrow x\in B$$
+Since $x\in A$ logically implies $x \in B$ from the definition of a subset, then the set difference $A \setminus B$ defined by all elements in the set $A$ which are simultaneously not members of the set $B$ must be the empty set. This is because any element in $A$ is also in $B$. Thus we have that: 
+
+\begin{table}[htp]
+    \centering
+    \begin{tabular}{ccc}
+        $A \setminus B = \emptyset$ & $\because$ & $\forall x \in A \Rightarrow x\in B$\\
+        $\emptyset\in B$ & $\because$ & $\emptyset$ is a subset of all sets\\
+    \end{tabular}
+\end{table}
+ \\
+Thus we have shown that $A \subseteq B \Rightarrow A\setminus B \subseteq B$. $\square$
+
+\subsection*{(ii) \textcolor{gray}{\small{\textit{(b) $\Rightarrow$ (c)}}}:}
+The set difference $A\setminus B$ is defined as $\{x:x \in A \text{ and } x\not\in B\}$. Since the set $A\setminus B$ is a subset of $B$, the set $A\setminus B$ must be the empty set because: $$\forall x \in \left[ A
+\setminus B\right]\;\Rightarrow\;x\not\in B$$ hence any element that is in the set $A\setminus B$ cannot be a member of the set $B$ meaning if there where any elements in the set $A\setminus B$ it would be impossible for $A\setminus B \subseteq B$. \newline
+In order for $A\setminus B$ to be the empty set the definition of $A\setminus B$ must contain  a contradiction which can be create by setting a requirement for the set $A$. So for $A\setminus B=\emptyset$ we have that, $x\in A \Rightarrow  x\in A \text{ and } x\in B$, thus, 
+
+\begin{table}[htp]
+    \centering
+    \begin{tabular}{ccc}
+        $\{x:x\in A \text{ and }x\not\in B\}$ & $\because$ & Definition of set difference\\
+        $\{x:(x\in A \text{ and } x\in B) \text{ and } x\not\in B\}$ & $\because$ & $x\in A \Rightarrow x\in A \text{ and } x\in B$\\
+        $\{x:x\in A \text{ and } (x\in B \text{ and } x\not\in B)\}$ & & Associativity \\
+    \end{tabular}
+\end{table}
+
+
+ \\
+We see that if it is the case that if $x\in A$ then $x\in B$ that $A\setminus B$ has a contradiction giving us the empty set. There for we know that if $A\setminus B \subseteq B$ is true all elements of $A$ must also be elements of $B$. It follows that $A \cup B = B$ if it is the case that all elements of $A$ are already members of $B$, since the union is all elements in either set $A$ or $B$ but $A$ is really just some or all of the elements of $A$ and sets do not contain duplicates it follows that $A\cup B=B$. $\square$
+
+\subsection*{(iii) \textcolor{gray}{\small{\textit{(a) $\Rightarrow$ (c)}}}:} 
+if $A \cup B = B$ then $A$ must be empty or contain only elements of $B$. If this where not the case and $A$ contained some element $x\not\in B$, $A\cup B \neq B$ because $A\cup B$ would contain all the elements of $B$ and the element $x\not\in B$. Thus $A$ must contain only elements from $B$ or contain no elements. In either case it follows that $A \subseteq B$. $\square$
+\newpage
+\subsection*{b)}
+We can prove this by showing that the following argument is valid: 
+
+\begin{table}[htp]
+    \centering
+    \begin{tabular}{r}
+        $A\Rightarrow B$\\
+        $B\Rightarrow C$\\
+        $C\Rightarrow A$\\
+        \hline
+        $(A \Leftrightarrow B) \land (B \Leftrightarrow C) \land( C \Leftrightarrow A)$
+    \end{tabular}
+\end{table}
+ \\
+We prove the argument as follows:
+
+\begin{table}[htp]
+    \centering
+    \begin{tabular}{rl}
+        $A\Rightarrow B$ & 1. Premise 1\\
+        $B\Rightarrow C$ & 2. Premise 2\\
+        $C\Rightarrow A$ & 3. Premise 3\\
+        $B\Rightarrow A$ & 4. Chain Rule (2,3)\\
+        $A\Leftrightarrow B$ & 5. Conjunction Introduction \& Definition of Logical Equivalence (1,4)\\
+        $C\Rightarrow B$ & 6. Chain Rule (3,1)\\
+        $B\Leftrightarrow C$ & 7. Conjunction Introduction \& Definition of Logical Equivalence (2,6)\\
+        $A\Rightarrow C$ & 8. Chain Rule (1,2)\\
+        $C\Leftrightarrow A$ & 9. Conjunction Introduction \& Definition of Logical Equivalence (3,8)\\
+        $(A \Leftrightarrow B) \land (B \Leftrightarrow C) \land( C \Leftrightarrow A)$ & Conjunction Introduction $\times 2$ (5,7,9)
+    \end{tabular}
+\end{table}
+ \\
+ As we can see we derived our conclusion from the premises. The conclusion means that all three statements are logically equivalent. $\square$
+ \newpage
+ \section*{Question 2:}
+ To prove that (a), (b) and (c) are logically  equivalent it suffices to prove that (a) $\Rightarrow$ (b), (b) $\Rightarrow$ (c) and (c) $\Rightarrow$ (a).
+\subsubsection*{i. (a) $\Rightarrow$ (b)}
+If the intersection of $A$ and $B$ is the empty set we conclude $A$ and $B$ have no common elements. Thus if we remove from the set $A$ all elements in $A$ which are in the set $B$ the set $A$ is unchanged since $A$ contains no elements from $B$ as concluded earlier.\\Thus (a) logically implies (b)
+
+\subsubsection*{ii. (b) $\Rightarrow$ (c)}
+Since $A\setminus B = A$ we can conclude $A$ and $B$ share no common elements because if $B$ contained an element $x\in A$, the set difference $A\setminus B \neq A$, it would equal $A$ except the element $x$, not $A$ itself. Now we examine the definition of the symmetric difference knowing $A$ and $B$ have no common elements, since the symmetric difference can be expressed as the union of the two sets, minus their intersection, we have:
+
+\begin{table}[htp]
+    \centering
+    \begin{tabular}{ccl}
+        $(A \cup B) \setminus (A\cap B)$ &  & Definition of Symmetric Difference\\
+        $(A \cup B) \setminus \emptyset$ & $\because$ & $A$ and $B$ have no common elements\\
+        $A\cup B$ & $\because$ & The set difference of a set and the empty set has no effect on the set\\
+         &  & \\
+    \end{tabular}
+\end{table}
+ \\
+ We can see how (b) can be simplified to (c), thus (b) logically implies (c)
+ \subsubsection*{ii. (c) $\Rightarrow$ (a)}
+ If the symmetric difference of $A$ and $B$ is the union of $A$ and $B$ we conclude $A$ and $B$ have no common elements since the symmetric difference of two sets is the union of the elements in each set that are unique and not contained in the other set. If the union of symmetric difference of two sets is their union it is implied that they share no common elements. \newline
+ It follows that if two sets contain no common elements there intersection will be the empty set by the definition of the intersection operator. Thus (c) implies (a)
+ \newline
+ \newline
+ Since we showed proved (a) $\Rightarrow$ (b), (b) $\Rightarrow$ (c) and (c) $\Rightarrow$ (a) and thus created a circle of implications by the chain rule we can say all of these statements are logically equivalent. $\square$
+
+ \newpage
+ \section*{Question 3:}
+ \subsection*{a)}
+ \subsubsection*{i.}
+ The set $(A\setminus B^C)\setminus C^C$ correspond to the region 5 on the Venn diagram.\\
+ The set $A\setminus(B\cup C)^C$ corresponds to the regions 2, 5 \& 6 on the Venn diagram. \\Thus we can disprove the equality $(A\setminus B^C)\setminus C^C = A\setminus(B\cup C)^C$ using a counter example:\\
+ Let:\begin{itemize}
+     \item $\mathcal{U}=\mathbb{N}$
+     \item $A=\{2\}$
+     \item $B=\mathcal{U}$
+     \item $C=\{1\}$
+ \end{itemize}
+
+  \begin{table}[ht]
+     \centering
+     \begin{tabular}{llll}
+     \textbf{LHS} & &  \textbf{RHS}&\\
+   $(A\setminus B^C)\setminus C^C$&& $A\setminus (B\cup C)^C$&\\
+   
+   $(A\setminus \emptyset)\setminus C^C$ & $\because B=\mathcal{U} \therefore B^C=\emptyset$ & $A\setminus (\mathcal{U})^C$ & Absorption of set union $\because B=\mathcal{U}$ \\
+   
+   $A\setminus C^C$ & Set Difference Identity & $A\setminus \emptyset$& Complement of Universe \\
+   
+   $\{2\}\setminus\{2,3,4,\dots\}$ & A,C set definition &$A$ & Set Difference Identity\\
+   
+   $\emptyset$ & Set Difference &$\{2\}$& A set Definition\\
+   
+     \end{tabular}
+ \end{table} \\
+
+ We see that $LHS \neq RHS$ with the given truth assignment which disproves the equality. $\square$
+
+ \subsubsection*{ii.}
+ Since the LHS represents the region 5, and the RHS represents regions 5,2 \& 6. The LHS is a subset of the RHS thus we will prove that $(A\setminus B^C)\setminus C^C \subseteq A\setminus (B\cup C)^C$, let us first examine the definitions of both the set $(A\setminus B^C)\setminus C^C$ and $A\setminus (B\cup C)^C$
+   \begin{table}[ht]
+     \centering
+     \begin{tabular}{llll}
+     \textbf{LHS} & &  \textbf{RHS}&\\
+         $(A\setminus B^C)\setminus C^C$&& $A\setminus (B\cup C)^C$&\\
+        $\{x: (x\in A \text{ and } x\not\in B^C) \text{ and }x\not\in C^C\}$&Set Builder Definition&$\{x:x
+        \in A \text{ and } x\not\in(B \text{ or } C)^C\}$&Set Builder Definition\\
+        $\{x: (x\in A \text{ and } x\in B) \text{ and }x\in C\}$&Double Negation$\times2$&$\{x: x\in A \text{ and } (x\in B \text{ or } x\in C)\}$&Double Negation$\times2$\\
+        $\{x: x\in A \text{ and } x\in B \text{ and }x\in C\}$&Associativity&&\\
+     \end{tabular}
+ \end{table}
+  \\
+  Thus we see the for $x$ to be a member of $(A\setminus B^C)\setminus C^C$ it must be a member of all three of the sets $A,B$ and $C$. Following, for $x$ to be a member of $A\setminus (B\cup C)^C$ it must be a member of $A$ and one or both of $B$ and $C$. Thus we can see how $x$ being a member of the LHS implies it being a member of the RHS since for it to be in the LHS it is part of all three sets, and to be in the RHS it is must be in at least $A$ or $B$ or $A$ and $C$ which will always be true if it is in the LHS. Thus $(A\setminus B^C)\setminus C^C \subseteq A\setminus (B\cup C)^C$ is true. $\square$
+\newpage
+ \subsection*{b)}
+ \subsubsection*{\textbf{i.}}
+ The set $(A\oplus B)\setminus C$ corresponds to the regions $\{1,3\}$ on the Venn diagram.\\
+ The set $(A\setminus C)\oplus B$ corresponds to the regions $\{1,3,4,5\}$ on the Venn diagram.
+ Thus we can disprove the equality $(A\oplus B)\setminus C=(A\setminus C)\oplus B$ using a counter example:\\Let:
+ \begin{itemize}
+     \item $A=\{1,2\}$
+     \item $B=\{1,3\}$
+     \item $C=\mathcal{U}$
+ \end{itemize}
+
+  \begin{table}[ht]
+     \centering
+     \begin{tabular}{llll}
+     \textbf{LHS} & &  \textbf{RHS}&\\
+   $(A\oplus B)\setminus C$&&$(A\setminus C)\oplus B$  &\\
+   
+   $(A\oplus B)\setminus \mathcal{U}$ & C is defined as the universe & $(A\setminus \mathcal{U})\oplus B$ & C is defined as the universe \\
+   
+   $\emptyset$ & Absorption of Set difference & $\emptyset\oplus B$& Absorption of Set Difference \\
+   
+   &&$B$ & Symmetric Difference Identity\\
+     \end{tabular}
+ \end{table}
+  \\
+  We see that $LHS \neq RHS$ with the given truth assignment which disproves the equality $\square$
+
+  \subsubsection*{ii.}
+Since the LHS represents regions $\{1,3\}$ and the RHS represents regions $\{1,3,4,5\}$ the LHS is a subset of the RHS since $\{1,3\}\subseteq\{1,3,4,5\}$, we prove that $(A\oplus B)\setminus C\subseteq(A\setminus C)\oplus B$, lets assume there exists and $x\in (A\oplus B)\setminus C$, we can expand this to: $((x\in A \text{ and } x\not\in B)\text{ or } (x\in B \text{ and } x\not\in A)) \text{ and } x\not\in C$, we split this into two cases: \\\\
+\textbf{Case 1:} $(x\in A \text{ and } x\not\in B) \text{ and } x\not\in C$
+\begin{table}[ht]
+    \begin{tabular}{ll}
+        $(x\in A \text{ and } x\not\in B)\text{ and } x\not\in C$ & \\
+        $\{x:(x\in A \text{ and } x\not\in B)\text{ and } x\not\in C\}$ & Set Builder Definition\\
+        $\{x:(x\in A \text{ and } x\not\in C)\text{ and } x\not\in B\}$ & Associativity\\
+        $(A\setminus C)\setminus B$ & Set Notation
+    \end{tabular}
+\end{table} \\
+By definition of symmetric difference $(A\setminus C)\setminus B\subseteq(A\setminus C)\oplus B$ because the elements of $(A\setminus C)\oplus B$ are elements that are in $A\setminus C$ but not $B\; \left[(A\setminus C)\setminus B\right]$ or elements that are in $B$ but not $A\setminus C$ \\\\
+\textbf{Case 2:} $(x\in B \text{ and } x\not\in A) \text{ and } x\not\in C$
+\begin{table}[ht]
+    \begin{tabular}{ll}
+        $(x\in B \text{ and } x\not\in A)\text{ and } x\not\in C$ & \\
+        $\{x:(x\in B \text{ and } x\not\in A)\text{ and } x\not\in C\}$ & Set Builder Definition\\
+        $\{x(x\in B \text{ and } (x\not\in C\text{ and } x\not\in A)\}$ & Associativity\\
+        $B\setminus (A\setminus C)$ & Set Notation
+    \end{tabular}
+\end{table} \\
+By definition of symmetric difference $B\setminus (A\setminus C)\subseteq(A\setminus C)\oplus B$ because the elements of $(A\setminus C)\oplus B$ are elements that are in $A\setminus C$ but not $B$ or elements that are in $B$ but not $A\setminus C\; \left[B\setminus (A\setminus C)\right]$ \\\\
+We have shown that in either case $(A\oplus B)\setminus C\subseteq(A\setminus C)\oplus B$ which completes the proof. $\square$
+\newpage
+\section*{Question 4:}
+\subsection*{a)}
+\subsubsection*{i.}
+Since we are counting the number of subsets with no odd numbers we want need to know how many even numbers may or may not be in the given subsets, which is $\lfloor 31/2 \rfloor = 15$, thus we have 15 elements that may or may not be in the set thus the number of subsets is $$2^{15}$$
+\subsubsection*{ii.}
+Didn't finish sorry ):
+
+\newpage
+\subsection*{b)}
+Lets first define what we know:
+\begin{itemize}
+    \item $\vert P \vert=29$
+    \item $\vert B \vert=36$
+    \item $\vert M \vert=25$
+    \item $\vert P \cap M\vert = 17$
+    \item $\vert P\cap B\vert = 10$
+    \item $\vert P\cap B\cap M\vert =4$
+    \item $\vert P\cup B\cup M\vert =100-40=60$
+\end{itemize} \\
+Then we re-arrange the formula for the principal of inclusion exclusion to find $\vert B\cap M\vert$ $$\vert B \cap M\vert = \vert P\vert + \vert M\vert +\vert B\vert -\vert P\cap M\vert -\vert P\cap B+\vert P \cap B\cap M\vert -\vert P\cup B\cup M\vert $$
+Then we can substitute our known values:$$\vert B\cap M\vert =29+36+25-17-10+4-60=7$$
+Thus we can assert that there are 7 individuals who like both biology and math.\newpage
+\section*{Question 5:}
+\subsection*{a)}
+\subsubsection*{i.}
+Base Case: $C_1 = p_1$\\
+Recursive Definition: $C_k = C_{k-1} \land p_k$ for $k\geq 2$
+\subsubsection*{ii.}
+Base Case: $D_1 = p_1$\\
+Recursive Definition: $D_k = D_{k-1} \lor p_k$ for $k\geq 2$
+\subsection*{b)}
+We will show how negating $D_k$ can prove this statement, we let $p_1 = p$,$p_2 = q$ and $p_3 = r$: 
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{cccccl}
+        $\lnot D_3$ & = & $\lnot(D_2 \lor p_3)$ & = & $\lnot((p_1 \lor p_2) \lor p_3)$ & Recursive Definition\\
+         &  &  &   = & $\lnot(p_1 \lor p_2) \land \lnot p_3$& DeMorgan's\\
+         &  &  & = & $\lnot p_1 \land 
+         \lnot p_2 \land\lnot p_3$ & DeMorgan's \& Associativity\\
+    \end{tabular}
+\end{table} \\
+Thus we demonstrate how by negating our recursive definition we can show that $\lnot(p_1 \lor p_2 \lor p_3) \Leftrightarrow \lnot p_1 \land \lnot p_2 \land \lnot p_3$
+\end{document}

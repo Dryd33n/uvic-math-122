@@ -1,0 +1,366 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{amssymb}
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
+\usepackage[margin=0.5in]{geometry}
+\title{MATH 122 Ass. 1}
+\author{Dryden Bryson}
+\date{September 2024}
+
+\begin{document}
+
+\maketitle
+\newpage
+
+
+
+
+
+\section*{Question 1,}
+
+
+\subsection*{A)}
+\begin{table}[htp]
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+         $p$&  $q$&  $r$& {If $p$ then $q$ else $r$}\\
+    \hline
+         0&  0&  0& 0\\
+    \hline
+         0&  0&  1& 1\\
+    \hline
+         0&  1&  0& 0\\
+    \hline
+         0&  1&  1& 1\\
+    \hline
+         1&  0&  0& 0\\
+    \hline
+         1&  0&  1& 0\\
+    \hline
+         1&  1&  0& 0\\
+    \hline
+         1&  1&  1& 0\\
+    \hline
+    \end{tabular}
+\end{table}
+
+\subsection*{B)}
+We know that when $p$ is false $r$ determines the value of "if $p$ then $q$ else $r$" and that when $p$ is true $q$ determines the value. Thus we create an or statement with an and on either side with $p$ and $\lnot p$ in each and. When $p$ is true the and with $\lnot p$ will be automatically false leaving the other side of the $p \land$ to determine if the compound statement will be true or false and vice versa, we can write this L.E as: $$(p\land q) \lor (\lnot p \land r)$$
+To satisfy the condition that we only use the symbols ($p, q, r, \lnot, \rightarrow, \land$)
+
+\begin{table}[htp]
+    \centering
+    \begin{tabular}{ccll}
+        $(p\land q) \lor (\lnot p \land r)$ & $\Leftrightarrow$ & $\lnot\big(\lnot(p\land q)\big) \lor \lnot\big(\lnot(\lnot p \land r)\big)$ & Double Negation $\times 2$\\
+        &$\Leftrightarrow$ & $\lnot\big(  \lnot(p\land q) \land \lnot(\lnot p \land r)\big)$ & DeMorgan's
+    \end{tabular}
+\end{table}
+Now we have as desired, a compound statement logically equivalent to if $p$ then $q$ else $r$ using only $p, q, r, \lnot, \rightarrow, \land$ $$\lnot\big(  \lnot(p\land q) \land \lnot(\lnot p \land r)\big)$$
+\subsection*{C)}
+Using mostly DeMorgan's Law and the Known L.E ($p \rightarrow q \Leftrightarrow \lnot p \lor q$) we find a logically equivalent compound statement without the use of $\land$ and $\lor$
+\begin{table}[htp]
+    \centering
+    \begin{tabular}{ccll}
+         $\lnot\big(  \lnot(p\land q) \land \lnot(\lnot p \land r)\big)$ &$\Leftrightarrow$& $\lnot\Big( \lnot \big( \lnot(\lnot p)\land \lnot(\lnot q)\big) \land \lnot \big( \lnot p \land \lnot(\lnot r)\big) \Big)$ & Double Negation $\times 3$ \\
+         &$\Leftrightarrow$& $\lnot\Big(\lnot\lnot\big( \lnot p\lor \lnot q\big) \land  \lnot\lnot\big(p \lor \lnot r\big) \Big)$ & DeMorgan's $\times 2$ \\
+         &$\Leftrightarrow$& $\lnot\Big(\big( \lnot p\lor \lnot q\big) \land  \big(\lnot(\lnot p) \lor \lnot r\big) \Big)$ & Double Negation\\
+         &$\Leftrightarrow$& $\lnot\Big(\big( p\rightarrow \lnot q\big) \land  \big(\lnot p \rightarrow \lnot r\big) \Big)$ & Known L.E $\times 2$\\
+         &$\Leftrightarrow$& $\lnot\Big(\lnot\lnot\big( p\rightarrow \lnot q\big) \land  \lnot\lnot\big(\lnot p \rightarrow \lnot r\big) \Big)$ & Double Negation $\times 2$\\
+         &$\Leftrightarrow$& $\lnot\big( p\rightarrow \lnot q\big) \lor  \lnot\big(\lnot p \rightarrow \lnot r\big)$ & DeMorgan's\\
+         &$\Leftrightarrow$& $(p \rightarrow \lnot q) \rightarrow \lnot( \lnot p \rightarrow \lnot r)$ & Known L.E \\
+         
+    \end{tabular}
+\end{table}
+
+
+
+
+
+\newpage
+\section*{Question 2,}
+\subsection*{A)}
+Let: $s,b,i$ be equivalent to the statements:
+\begin{itemize}
+    \item $s = $ you are sitting still
+    \item $b = $ you are behaving
+    \item $i = $ you can have ice cream
+\end{itemize}
+The first statement: "If you sit still and behave, then you can have ice cream” becomes: $$(s\land b) \rightarrow i$$
+The second statement: “If you don’t sit still or you don’t behave, then you can’t have ice cream” becomes:$$(\lnot s \lor \lnot b) \rightarrow \lnot i$$
+These two statements are not logically equivalent, we can prove this with their respective truth tables:
+
+\begin{table}[htp]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+        $s$ & $b$ & $i$ & $(s\land b) \rightarrow i$ & $(\lnot s \lor \lnot b) \rightarrow \lnot i$\\
+    \hline
+        1 & 1 & 1 & 1 & 1\\
+    \hline
+        1 & 1 & 0 & 0 & 1\\
+    \hline
+        1 & 0 & 1 & 1 & 0\\
+    \hline
+        1 & 0 & 0 & 1 & 1\\
+    \hline
+        0 & 1 & 1 & 1 & 0\\
+    \hline
+        0 & 1 & 0 & 1 & 1\\
+    \hline
+        0 & 0 & 1 & 1 & 0\\
+    \hline
+        0 & 0 & 0 & 1 & 1\\
+    \hline
+    \end{tabular}
+\end{table}
+\subsection*{B)}
+Let: $q,t,u$ be equivalent to the statements:
+\begin{itemize}
+    \item $q = $ She qualifies for the Olympic 100m final
+    \item $t = $ She finishes top 2 in the semifinal
+    \item $u = $ She finishes in under 11 seconds
+\end{itemize}
+The first statement: "To qualify for the Olympic 100m final, she needs to finish top 2 in the semifinal or finish in under 11 seconds: $$(t \lor u) \rightarrow q$$
+The second statement: If she does not finish in the top 2 in the semifinal and she does not finish in
+under 11 seconds, then she will not qualify for the Olympic 100m final” becomes:$$(\lnot t \land \lnot u) \rightarrow \lnot q$$
+These two statements are not logically equivalent, we can prove this with their respective truth tables:
+
+\begin{table}[htp]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+        $q$ & $t$ & $u$ & $(t \lor u) \rightarrow q$ & $(\lnot t \land \lnot u) \rightarrow \lnot q$\\
+    \hline
+        1 & 1 & 1 & 1 & 1\\
+    \hline
+        1 & 1 & 0 & 1 & 1\\
+    \hline
+        1 & 0 & 1 & 1 & 0\\
+    \hline
+        1 & 0 & 0 & 1 & 1\\
+    \hline
+        0 & 1 & 1 & 0 & 0\\
+    \hline
+        0 & 1 & 0 & 0 & 1\\
+    \hline
+        0 & 0 & 1 & 0 & 0\\
+    \hline
+        0 & 0 & 0 & 1 & 1\\
+    \hline
+    \end{tabular}
+\end{table}
+\newpage
+\subsection*{C)}
+Let $s,p$ be equivalent to the statements:
+\begin{itemize}
+    \item $s = $ he studies
+    \item $p = $ he passes the quiz
+\end{itemize}
+Then the first statement:  “He will not pass the quiz if he doesn’t study” becomes:$$\lnot s \rightarrow \lnot p$$
+And the second statement: “It is not true that he will pass and not study” becomes: $$\lnot(p\land\lnot s)$$
+We can prove the statements are logically equivalent using logical equivalences and laws of logic:
+
+\begin{table}[htp]
+    \centering
+    \begin{tabular}{ccll}
+     $\lnot s \rightarrow \lnot p$ & $\Leftrightarrow$ & $s \lor \lnot p$ & Known L.E\\
+     & $\Leftrightarrow$ & $\lnot (\lnot s) \lor \lnot p$ & Double Negation\\
+     & $\Leftrightarrow$ & $\lnot(\lnot s \land p)$ & DeMorgan's\\
+     & $\Leftrightarrow$ & $\lnot(p \land \lnot s)$ & Commutativity
+    \end{tabular}
+\end{table}
+
+ \\As desired we demonstrated that the first statement is logically equivalent to the second statement, thus: $$\lnot s \rightarrow \lnot p\Leftrightarrow \lnot(p\land\lnot s)\;\;\;$$$$\\\text{and}\;\;\;\text{"He will not pass the quiz if he doesn’t study"}\Leftrightarrow\text{"It is not true that he will pass and not study"}$$
+
+
+
+
+
+\newpage
+\section*{Question 3,}
+\subsection*{a)}
+We prove that $p \land (q \lor r) \Leftrightarrow (p \land q) \lor (p \land r)$:
+
+
+\begin{table}[htp]
+    \centering
+    \begin{tabular}{ccll}
+        $p \land (q \lor r)$ & $\Leftrightarrow$ & $\lnot\big(\lnot p \lor \lnot(q \lor r)\big)$ & DeMorgan's\\
+         & $\Leftrightarrow$ & $\lnot\big(\lnot p \lor (\lnot q \land \lnot r)\big)$ & DeMorgan's\\
+         & $\Leftrightarrow$ & $\lnot\big( (\lnot p \lor \lnot q) \land (\lnot p \lor \lnot r)\big)$ & Distributive D1\\
+         & $\Leftrightarrow$ & $\lnot\big( \lnot (p \land q) \land \lnot ( p \land r)\big)$  & DeMorgan's $\times 2$\\ 
+         & $\Leftrightarrow$ & $ (p \land q) \land ( p \land r)$  & DeMorgan's, as desired\\ 
+    \end{tabular}
+\end{table}
+
+\subsection*{b)}
+First we find an statement for all rows with $s=1$ and find an equation only true for the truth values:
+\begin{table}[htp]
+\centering
+    \begin{tabular}{|c|c|c|c|}
+        $p$ & $q$ & $r$ & $s$\\
+         \hline
+         0& 0 & 0 & 0\\
+         0& 0 & 1 & 0\\
+         0& 1 & 0 & 0\\
+         0& 1 & 1 & 1\\
+         1& 0 & 0 & 0\\
+         1& 0 & 1 & 0\\
+         1& 1 & 0 & 1\\
+         1& 1 & 1 & 1\\
+    \end{tabular}
+    \;\;\;\;\;\;\;\;\;\;\;\;\;\;\;
+$    \begin{aligned}
+        &\Longrightarrow \text{Row 3.}\;\;\;\;\;\;\;\;\;\;\; \lnot p \land q \land r\\
+        &\Longrightarrow \text{Row 7.}\;\;\;\;\;\;\;\;\;\;\;  p \land q\land \lnot r\\
+        &\Longrightarrow \text{Row 8.}\;\;\;\;\;\;\;\;\;\;\; p \land q\land r\\
+    \end{aligned}$\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;
+\end{table}\\
+Now combining these into disjunctive normal form gives us an equation valid for the given truth table:$$(\lnot p \land q \land r)\lor(p \land q\land \lnot r)\lor(p \land q\land r)$$
+\subsection*{c)}
+We prove that: $$q\land(\lnot r \rightarrow p) \Leftrightarrow (\lnot p \land q \land r)\lor(p \land q\land \lnot r)\lor(p \land q\land r)$$
+
+\begin{table}[htp]
+    \centering
+    \begin{tabular}{ccll}
+        $(\lnot p \land q \land r)\lor(p \land q\land \lnot r)\lor(p \land q\land r)$ & $\Leftrightarrow$ & $(\lnot p \land (q \land r))\lor(p \land (q\land r))\lor((p \land \lnot r)\land q )$ & Associative $\times 3$, Commutative $\times 3$\\
+         & $\Leftrightarrow$ & $((q\land r) \land (p\lor\lnot p)) \lor ((p \land \lnot r)\land q )$& Distributive\\
+         & $\Leftrightarrow$ & $((q\land r) \land (1)) \lor ((p \land \lnot r)\land q )$ & Known Tautology\\
+         & $\Leftrightarrow$ & $(q\land r) \lor ((p \land \lnot r)\land q )$ & Identity\\
+         & $\Leftrightarrow$ & $q \land (r \lor (p \land \lnot r)$ & Distributive\\
+         & $\Leftrightarrow$ & $q \land ((r \lor p) \land (r\lor\lnot r))$ & Distributive\\
+         & $\Leftrightarrow$ & $q \land ((r \lor p) \land (1))$ & Known Tautology\\
+         & $\Leftrightarrow$ & $q \land (r \lor p)$ & Identity\\
+         & $\Leftrightarrow$ & $q \land (\lnot(\lnot r) \lor p)$ & Double Negation\\
+         & $\Leftrightarrow$ & $q \land (\lnot r \rightarrow p)$ & Known Identity, as desired\\
+         
+
+    \end{tabular}
+\end{table}
+\newpage
+\section*{Question 4,}
+\subsection*{a)}
+\begin{enumerate}[i)]
+    \item In the statement $p \land (p \lor q)$ if $p$ is true, the truth value of $q$ does not matter in the statement $(p\lor q)$ as if there is 1 side of the $\lor$ that is true the entire statement is true. This means our statement becomes $p \land p$ which if of course true if $p$ is true.
+    \item In the statement $p \land (p \lor q)$ if $p$ is false, we can immediately tell the entire statement is false because if one side of an $\land$ statement is false, in this case $p$, we can disregard the other side of the $\land$, and by definition the entire statement is false.
+\end{enumerate}
+We showed that for the entire universe of $p$ the statement is equal to $p$, and demonstrated that the truth value of $q$ was irrelevant, thus proving the logical equivalence. 
+\subsection*{b)}
+We show that $(r\rightarrow q) \land (q \land \lnot p)$ is equivalent to $\lnot(\lnot q \lor p)$ by using logical equivalences and the absorption law:
+
+\begin{table}[htp]
+    \centering
+    \begin{tabular}{ccll}
+        $(r\rightarrow q) \land (q \land \lnot p)$ & $\Leftrightarrow$ & $(\lnot r\lor q) \land (q \land \lnot p)$ & Known L.E\\
+         & $\Leftrightarrow$ &$((\lnot r\lor q) \land q) \land \lnot p$ & Associative\\
+         & $\Leftrightarrow$ & $q \land \lnot p$ & Absorption\\
+         & $\Leftrightarrow$ & $\lnot(\lnot q \lor p)$ & DeMorgan's, as desired\\
+    \end{tabular}
+\end{table}
+\newpage
+\section*{Question 5,}
+\subsection*{a)}
+Let the following statements, $e,c,w,s\;\& \;d$ be equal to:
+\begin{itemize}
+    \item $e = $ I ate tomatoes
+    \item $c = $ I consumed enough vitamin C
+    \item $w = $ The tomato plant got enough water
+    \item $s = $ The tomato plant got enough sunlight
+    \item $d = $ The tomato plant died
+\end{itemize}
+Writing it in symbolic form:
+
+\begin{table}[htp]
+    \centering
+    \begin{tabular}{r}
+        $\lnot e \rightarrow \lnot c$\\
+        $(\lnot w \lor \lnot s)\rightarrow (d \land \lnot e)$\\
+        $c$\\
+        \hline
+        $\therefore$ \;\;$s$
+    \end{tabular}
+\end{table}
+Now using inference rules to prove the implication:
+\begin{table}[htp]
+    \centering
+    \begin{tabular}{ccl}
+         1. & $\lnot e \rightarrow \lnot c$& Given Premise\\
+         2. & $c$ & Given Premise\\
+         3. & $(\lnot w \lor \lnot s)\rightarrow (d \land \lnot e)$ & Given Premise\\
+         4. & $c\rightarrow e$ & Contrapositive (1)\\
+         5. & $e$ & Modus Ponens (2,4)\\
+         6. & $\lnot (d \land \lnot e) \rightarrow \lnot(\lnot w \lor \lnot s)$ & Contrapositive (3)\\
+         7. & $(\lnot d\lor e) \rightarrow (w \land s) $ & DeMorgan's $\times 2$\\
+         8. & $\lnot d\lor e$ & Disjunctive Amplification (5,7)\\
+         9. & $w\land s$ & Modus Ponens (7,8)\\
+         10. & $s$ & Conjunctive Simplification (9)
+    \end{tabular}
+\end{table}\\
+From the premises we have inferred that $s$ is true thus proving the implication.
+\newpage
+\subsection*{b)}
+\begin{itemize}
+    \item $w = $ I walk to work
+    \item $c = $ I cycle to work
+    \item $m = $ I listen to music
+    \item $g = $ I chew gum
+    \item $a = $ I am alone
+\end{itemize}
+Writing it in symbolic form
+
+\begin{table}[htp]
+    \centering
+    \begin{tabular}{r}
+        $w \lor c$\\
+        $\lnot(w \land c)$\\
+        $w\rightarrow ((m\land g) \leftrightarrow a)$\\
+        $c \rightarrow \lnot g$\\
+        \hline
+        $\therefore \;\; g\rightarrow m$
+    \end{tabular}
+\end{table}
+Using a counter example we prove the argument is invalid, let:
+\begin{itemize}
+    \item $w=1$ I walked to work
+    \item $c=0$ I did not cycle to work
+    \item $g=1$ I chewed gum
+    \item $m=0$ I did not listen to music
+    \item $a=0$ I am not alone
+\end{itemize}
+We see that all the premises are true but the conclusion is false:
+
+\begin{table}[htp]
+    \centering
+    \begin{tabular}{c|c|c|c|c}
+        Prem 1. $w \lor c$& Prem 2. $\lnot(w \land c)$& Prem 3. $w\rightarrow ((m\land g) \leftrightarrow a)$& Prem 4. $c \rightarrow \lnot g$& Conclusion $g\rightarrow m$\\\hline\\
+        $1\lor 0$ & $\lnot(1\land0)$ & $1\rightarrow((0\land1)\leftrightarrow 0)$ & $0\rightarrow \lnot 1$ & $1\rightarrow 0$\\
+        $\vdots$&$\lnot(0)$&$1\rightarrow(0 \leftrightarrow 0)$&$\vdots$& $\vdots$\\
+        $\vdots$ & $\vdots$ & $1\rightarrow1$ & $\vdots$ & $\vdots$\\
+        $1$ &$1$ &$1$ &$1$ & $0$
+    \end{tabular}
+\end{table}
+ \\Using the above truth values we have that all the premises are true yet the conclusion is false, thus the conclusion does not follow the premises and it is an \textbf{invalid argument}.
+
+\newpage
+\section*{Question 6 (Bonus),}
+The boxes we need to check are:
+\begin{itemize}
+    \item \textbf{Vanilla Sponge Box}, to ensure that all icing is either raspberry or chocolate.
+    \item \textbf{Lemon Icing Box}, to ensure that there is no vanilla sponge with lemon icing.
+    \item \textbf{Elderflower Icing Box}, to ensure that there is no vanilla sponge with elder flower icing.
+\end{itemize}
+The other boxes we do not need to check since:
+    \begin{itemize}
+        \item \textbf{Red Velvet Sponge Box}, since our rule only applies to vanilla sponge.
+        \item \textbf{Raspberry Icing}, this box would already comply with the rule, if by chance it contained vanilla sponge.
+        \item \textbf{Chocolate Icing}, this box would already comply with the rule, if by chance it contained vanilla sponge.
+    \end{itemize}
+Thus only 3 boxes need to be opened in order to verify that the head bakers rule is being followed.
+\end{document}

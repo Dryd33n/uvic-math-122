@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+
+\title{Math 122 I.C.A 3}
+\author{Dryden Bryson}
+\date{September 2024}
+
+\begin{document}
+
+\maketitle
+\newpage
+\section*{I.C.A 3:}
+
+\begin{table}[htp]
+    \centering
+    \begin{tabular}{ccll}
+        $\lnot(p\rightarrow q) \lor \lnot(\lnot r \rightarrow \lnot p)$ & $\Leftrightarrow$ & $\lnot (p\rightarrow (q \land r)$ & Given\\
+        & $\Leftrightarrow$ & $\lnot\big(\lnot p \lor (q \land r)\big)$ & Known L.E\\
+        & $\Leftrightarrow$ & $p \land \lnot(q \land r)$ & DeMorgan's\\
+        & $\Leftrightarrow$ & $p\land (\lnot q \lor \lnot r)$ & DeMorgan's\\
+        & $\Leftrightarrow$ & $(p\land \lnot q) \lor (p\land \lnot r)$ & Distributive\\
+        & $\Leftrightarrow$ & $(p\land \lnot q) \lor (\lnot r\land p  )$ & Commutative\\
+        & $\Leftrightarrow$ & $\lnot(\lnot p \lor q) \lor \lnot(r\lor\lnot p)$ & DeMorgan's $\times 2$\\
+        & $\Leftrightarrow$ & $\lnot(\lnot p \lor q) \lor \lnot(\lnot(\lnot r)\lor\lnot p)$ & Double Negation\\
+        & $\Leftrightarrow$ & $\lnot(p\rightarrow q) \lor \lnot(\lnot r \rightarrow \lnot p)$ & Known L.E $\times 2$, as desired
+        
+    \end{tabular}
+
+\end{table}
+
+\end{document}

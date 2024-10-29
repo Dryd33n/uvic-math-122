@@ -1,0 +1,70 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[legalpaper, portrair, margin=1in]{geometry}
+\usepackage{amssymb}
+\usepackage{cancel}
+
+\title{Math 122 I.C.A 7}
+\author{Dryden Bryson}
+\date{October 2024}
+
+\begin{document}
+
+\maketitle
+
+\newpage
+\section*{Question 1:}
+\subsection*{\textbf{Proposition:}} $$1+x+x^2+\dots+x^n = \frac{x^{n+1}-1}{x-1}$$
+ \\
+\subsection*{\textbf{Proof:}}
+We apply induction on $n$
+\subsubsection*{\textbf{Basis:}}
+We prove that the proposition is true for $n = 0$
+\\\\\textbf{LHS:}
+$\begin{aligned}
+    1
+\end{aligned}$
+\\\textbf{RHS:}
+$
+\begin{aligned}
+    \frac{x^1-1}{x-1}
+    =1
+\end{aligned}
+$
+ \\\\
+We see that LHS = RHS thus the proposition is true for $n=0$
+\subsubsection*{\textbf{Inductive Hypothesis:}}
+Let $n\geq 0$, and suppose that:$$1+x+x^2+\dots+x^n = \frac{x^{n+1}-1}{x-1}$$
+
+\subsubsection*{\textbf{Inductive Step:}}
+We prove that the proposition is true for $n+1$\\\\
+\textbf{LHS:}
+
+\begin{table}[htp]
+    \centering
+    \begin{tabular}{lcl}
+        $1+x+x^2+\dots+x^n+x^{n+1}$ &  & LHS when $n+1$\\
+        $=\frac{x^{n+1}-1}{x-1} + x^{n+1}$ & $\because$ & From the Inductive Hypothesis\\
+        $=\frac{x^{n+1}-1}{x-1} + \frac{x^{n+1}(x-1)}{(x-1)}$ &  & Multiplicative Identity\\
+        $=\frac{(x^{n+1}-1)+ (x^{n+1}(x-1))}{x-1}$ &  & Fraction Addition\\
+        $=\frac{(x^{n+1}-1)+ (x^{n+2}-x^{n+1})}{x-1}$&&Distributive Property\\
+        $=\frac{x^{n+2}\cancel{-x^{n+1}}\cancel{+x^{n+1}}-1}{x-1}$&&Commutative \& Simplification\\
+        $=\frac{x^{n+2}-1}{x-1}$&&
+    \end{tabular}
+\end{table}
+ \\
+ \textbf{RHS}
+ 
+ \begin{table}[htp]
+     \centering
+     \begin{tabular}{lcl}
+         $\frac{x^{(n+1)+1}-1}{x-1}$ &  & RHS when $n+1$\\
+         $\frac{x^{n+2}-1}{x-1}$ &  & Additive Simplification\\
+          &  & \\
+     \end{tabular}
+ \end{table}
+  \\
+  We observe that LHS = RHS thus the proposition if true for $n+1$
+\subsubsection*{\textbf{Conclusion:}}
+Therefore by PMI for any $n\geq 0$, $$1+x+x^2+\dots+x^n = \frac{x^{n+1}-1}{x-1}$$
+\end{document}

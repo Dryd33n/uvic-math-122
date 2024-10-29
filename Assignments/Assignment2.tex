@@ -1,0 +1,193 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[legalpaper, portrait, margin=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\title{Math 122 Ass. 2 Fall}
+\author{Dryden Bryson}
+\date{October 2024}
+
+\begin{document}
+
+\maketitle
+\newpage
+\section*{Question 1:}
+\subsection*{a)}
+
+
+\begin{center}
+   $(3+7 > 12) \land (8+7 > 12)$\\ \\
+    $(10 > 12) \land (15 > 12)$\\
+    $\textbf{0} \land \textbf{1}$\\
+    $\textbf{0}$
+\end{center}
+
+\subsection*{b)}
+
+\begin{center}
+    $\big((2(3) \geq 16)\rightarrow(3 < 5)\big)\lor\big((2(8) \geq 16)\rightarrow(8 < 5)\big)$\\ \\
+    $\big((6 \geq 16)\rightarrow(\textbf{1})\big)\lor\big((16 \geq 16)\rightarrow(\textbf{0})\big)$\\
+    $\big(\textbf{0}\rightarrow(\textbf{1})\big)\lor\big(1\rightarrow\textbf{0}\big)$\\
+    $\textbf{1}\lor \textbf{0}$\\
+    $\textbf{1}$
+    
+\end{center}
+
+
+\subsection*{c)}
+
+\begin{center}
+    $\Big(\big((3+3=11) \leftrightarrow (3=3)\big)\lor
+\big((3+8=11) \leftrightarrow (3=3)\big)\Big)\land
+\Big(\big((8+3=11) \leftrightarrow (8=3)\big)\lor
+\big((8+8=11) \leftrightarrow (8=3)\big)\Big)$\\
+
+$\Big(\big((6=11) \leftrightarrow \textbf{1}\big)\lor
+\big((11=11) \leftrightarrow \textbf{1}\big)\Big)\land
+\Big(\big((11=11) \leftrightarrow \textbf{0}\big)\lor
+\big((16=11) \leftrightarrow \textbf{0}\big)\Big)$\\
+
+$\Big(\big(\textbf{0} \leftrightarrow \textbf{1}\big)\lor
+\big(\textbf{1} \leftrightarrow \textbf{1})\big)\Big)\land
+\Big(\big(\textbf{1} \leftrightarrow \textbf{0}\big)\lor
+\big(\textbf{0} \leftrightarrow \textbf{0}\big)\Big)$\\
+$(\textbf{0}\lor \textbf{1})\land (\textbf{0}\lor \textbf{1})$\\
+$\textbf{1}\land\textbf{1}$\\
+$\textbf{1}$
+\end{center}
+
+\newpage
+\section*{Question 2:}
+\subsection*{a)}
+The statement: $$\forall x, \exists y, \forall w, (y^2=x) \land ((w\neq y)\rightarrow (w^2\neq x))$$
+translates to in plain English:$$\text{For all possible values of $x$ there exists a unique variable $y$, that when squared is equal to $x$}$$
+\subsection*{b)}
+The negation from the statement in part a is found as follows:
+\begin{table}[htp]
+    \centering
+    \begin{tabular}{cl}
+        $\lnot\left[\forall x, \exists y, \forall w, (y^2=x) \land ((w\neq y)\rightarrow (w^2\neq x))\right]$ & Negation \\
+        $\exists x, \lnot\left[\exists y, \forall w, (y^2=x) \land ((w\neq y)\rightarrow (w^2\neq x))\right]$ & Negation of Quantifier \\
+        $\exists x, \forall y, \lnot\left[\forall w, (y^2=x) \land ((w\neq y)\rightarrow (w^2\neq x))\right]$ & Negation of Quantifier \\
+        $\exists x, \forall y, \exists w, \lnot\left[(y^2=x) \land ((w\neq y)\rightarrow (w^2\neq x))\right]$ & Negation of Quantifier \\
+        $\exists x, \forall y, \exists w, \lnot(y^2=x) \land \lnot(\lnot(w\neq y)\lor (w^2\neq x))$ & DeMorgan's \& Implication Definition\\
+        $\exists x, \forall y, \exists w, \lnot(y^2=x) \land ((w\neq y)\lor \lnot(w^2\neq x))$ & DeMorgan's\\
+        $\exists x, \forall y, \exists w, \lnot(y^2=x) \land (\lnot(w^2\neq x)\lor (w\neq y))$ & Commutative\\
+        $\exists x, \forall y, \exists w, \lnot(y^2=x) \land (\lnot(w^2= x)\rightarrow \lnot(w=y))$ & Implication Definition \& Equality L.E\\
+    \end{tabular}
+    
+      \\ \\ \\
+    Thus we have the negated statement from part a without the use of negated quantifiers or the "$\neq$" symbol:
+    $$\exists x, \forall y, \exists w, \lnot(y^2=x) \land (\lnot(w^2= x)\rightarrow \lnot(w=y))$$
+\end{table}
+
+\subsection*{c)}
+This statement is only true for $\mathcal{U}=\{x\in\mathbb{N}:x\}$, otherwise any negative values of $x$ will result in a false truth value. We will demonstrate by counter-example that the statement from part a is not true for the universe of real numbers.\\
+
+Let $x=-1$ and let $w\in\mathbb{R}$, we will show there is no possible value that exists for $y$ that makes the statement true, we will examine the statement ($y^2=x$) on the left of the conjunction:\\
+
+The only solution to $y^2 = -1$ is that $y=i$, the imaginary constant. Since the universe of the set is the Real numbers which excludes the imaginary constant, there is no $y\in\mathbb{R}$ that satisfies $y^2=-1$.\\
+
+Since the statement is a conjunction, if one side is false, the conjunction itself is false, and since we proved that the LHS of the conjunction can never be true if the universe is the real numbers and if $x < 0$, the entire conjunction is false.$\square$ 
+
+\newpage
+\section*{Question 3:}
+\subsection*{a)}
+If $n$ is odd, there exists a $k\in\mathbb{Z}$ such that $n=2k+1$, then we have:
+
+\begin{table}[htp]
+    \centering
+    \begin{tabular}{ccll}
+       $n+n^2+n^3$ &$=$ & $(2k+1)+(2k+1)^2+(2k+1)^3$ & Odd Number Definition\\
+         &$=$& $(2k+1)+(4k^2+4k+1)+(8k^3+12k^2+6k+1)$ & Binomial Expansion \& Cubic Expansion \\
+         &$=$& $8k^3+16k^2+12k+3$ & Commutative, Associative \& Collect Like Terms\\
+         &$=$& $(8k^3+16k^2+12k+2)+1$ & Additive Decomposition \& Associative\\
+         &$=$& $2(4k^3+8k^2+6k+1)+1$ & Distributive\\
+    \end{tabular}
+\end{table} \\
+We see on the final line that the formula is in the standard form of an odd number. Thus we have proved that if $n$ is odd then $n+n^2+n^3$ is odd. $\square$
+
+\subsection*{b)}
+We can show that the statement is true by proving the contra-positive. We know that the set of any collection of even numbers thus we need only prove that $n^k$ for all $k \in \{k\in\mathbb{Z}: k > 0\}$. If $n$ is even there exists an integer $m$ such that $n=2k$, then we show $n^k$ is even:
+\begin{table}[htp]
+    \centering
+    \begin{tabular}{ccll}
+    $n^k$&$=$& $(2m)^k$&Even number definition\\
+    &$=$&$2^km^k$ & Distributivity over multiplication\\
+    &$=$&$(2\cdot2^{k-1})m^k$ & Exponent Reduction\\
+    &$=$&$2(2^{k-1}m^k)$ & Associativity
+    \end{tabular}
+\end{table} \\
+We see that if $n$ is even then $n^k$ where $k$ is a positive integer is an even number by definition. Thus we have proven the contra-positive of the statement that if $n$ is even then $n+n^2+\dots+n^k$ is also even. $\square$
+
+\newpage
+\section*{Question 4:}
+\subsection*{a)}
+We can prove the statement by proving the contra-positive of the statement $P(\frac{a}{b}) \rightarrow ((P(a)\lor P(b))$, where $P(x)$ is the statement, "x is irrational". Which is: $((\lnot P(a)\land \lnot P(b)) \rightarrow \lnot(\frac{a}{b})$ or if both $a$ and $b$ are rational then $\frac{a}{b}$ is rational.\\\\
+Since $a$ and $b$ are both rational, let them be expressed in the form $a=\frac{p}{q}$,$b=\frac{r}{s}$, where $p,q,r,s\in\mathbb{Z}$ Thus we have:
+\begin{table}[htp]
+    \centering
+    \begin{tabular}{ccll}
+        $\frac{a}{b}$&$=$&$\frac{\frac{p}{q}}{\frac{r}{s}}$ &\\
+        & & &\\
+        &$=$& $\frac{p}{q}\frac{s}{r}$&\\
+        & & &\\
+        &$=$& $\frac{ps}{qr}$&
+    \end{tabular}
+\end{table} \\
+Since $p,q,r,s$ are all integers and rational,  $\frac{ps}{qr}$ is the ratio of two integers making itself rational. Thus $\frac{a}{b}$ is rational. Which implies that if $\frac{a}{b}$ is irrational $a$ or $b$ is rational. $\square$
+
+
+\subsection*{b)}
+To prove the biconditional we split the proof into two parts:\\\\
+\textbf{Part 1: if $n$ is even $\sqrt{2^n}$ is rational:}\\
+Assume $n$ is even, then, there exists an integer $k$ such that $n=2k$, then we show that $\sqrt{2^n}$ is rational:
+\begin{table}[htp]
+    \centering
+    \begin{tabular}{ccll}
+    $\sqrt{2^n}$&$=$& $\sqrt{2^{2k}}$& Even number definition\\
+    &$=$&$2^{\frac{1}{2}\cdot 2k}$ & Exponent Properties\\
+    &$=$&$2^k$ & Simplification
+        \end{tabular}
+\end{table} \\
+In the form $2^k$ for any $k$, $2^k$ is rational.\\\\
+\textbf{Part 2: if $\sqrt{2^n}$ is rational $n$ is even:}\\
+We can prove this by proving the contra-positive, that is, that if $n$ is odd then $\sqrt{2^n}$ is irrational. Assume $n$ is odd that is, that, there exists an integer $k$ such that $n=2k+1$, then we have:
+\begin{table}[htp]
+    \centering
+    \begin{tabular}{ccll}
+        $\sqrt{2^n}$&$=$& $\sqrt{2^{2k+1}}$&Odd number definition\\
+        &$=$& $2^{(2k+1)\frac{1}{2}}$&Property of Radical\\
+        &$=$& $2^{\frac{2k}{2}+\frac{1}{2}}$&Distributivity\\
+        &$=$& $2^k\sqrt{2}$&Exponent Product Rule \& Property of Radical\\    
+    \end{tabular}
+\end{table} \\
+We know that any irrational number times a non-zero rational number will be irrational, thus we showed that if $n$ is odd then $\sqrt{2^n}$ is irrational which implies that if $\sqrt{2^n}$ is rational $n$ is even. \\\\ Since we have proved both directions of the bi-conditional, we proved that $\sqrt{2^n}$ is rational if and only if $n$ is even, thus this completes the proof. $\square$
+
+\newpage
+\section*{Question 5:}
+\section*{a)}
+\subsection*{i.}
+\textbf{True, }Since $\mathbb{Z}$ contains infinite finite integers, all values in $\mathbb{Z}$ are represented since you can take any integer and it will be in the set since if $x$ is $3$ less than the given integer, it will be in the set by the definition of the set. 
+\subsection*{ii.}
+\textbf{False, }the cardinality of the set $\{1, 2, \{1, 2\}, \{2, 1\}\}$ is 3 since it contains the following 3 elements:
+    \begin{itemize}
+        \item $1$
+        \item $2$
+        \item $\{1,2\}=\{2,1\}$
+    \end{itemize}
+Since sets are not ordered $\{1,2\}=\{2,1\}$ thus the cardinality of our set is 3.
+\subsection*{iii.}
+\textbf{True, }If the intersection of the power-set of $A$ and the power-set of $B$ it means they share at least one common element since the sets containing each individual element from sets $A$ and $B$ are part of their respective power-sets. Thus is they share at least one common element the intersection of the two sets will not be the empty set.
+\subsection*{iv.}
+\textbf{False,} $\vert A \cap B \vert < \vert A \cup B \vert$. Is true only when $A \neq B$. If the sets $A$ and $B$ are identical the cardinality of their union and intersection are the identical.
+    
+\section*{b)}
+$p$ can be an open statement if it accepts a variable which is itself a statement with a truth value. If the given statement is false, $p$ would be true and if the given statement is true $p$ would be false. $p$ itself can also be a statement, provided that when $p = \text{“this statement is false.”}$ it refers to $p$ itself, in this case $p$ would be a contradiction, a statement that is always false. 
+
+\newpage
+\section*{Question 6 (Bonus):}
+Since every time a coin if flipped, 4 total coins are flipped, it is impossible that the prisoner can be released. Since we begin with 3 coins in heads, it is not possible to flip the remaining 3 coins with an operation that flips 4 coins at a time. Thus there will always be either 1,3 or 5 coins which are heads.
+\end{document}
+ 
