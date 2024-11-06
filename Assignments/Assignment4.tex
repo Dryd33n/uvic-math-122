@@ -1,0 +1,239 @@
+\documentclass{article}
+\usepackage[legalpaper, portrait, margin=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{cancel}
+
+\title{Math 122 Assignment 4}
+\author{Dryden Bryson}
+\date{October 5th 2024}
+
+\begin{document}
+
+\maketitle
+\newpage
+\section*{Question 1:}
+\subsection*{a)}
+\subsubsection*{\textbf{Basis}}
+We prove that the statement is true for the base case where $n=1$:\\ 
+\begin{table}[htp]
+\centering
+\begin{tabular}{cc}
+  \textbf{LHS} & \textbf{RHS}  \\
+  $(1+x)^1$ & $1+(1)x$\\
+  $1+x$ & $1+x$
+\end{tabular}
+\end{table} \\ \\
+We can see that $LHS=RHS$ thus the inequality holds for the base case.
+\subsubsection*{Inductive Hypothesis}
+We assume that the inequality holds for all values of $n\geq 1$:$$(1+x)^{n}\geq 1+nx$$
+\subsubsection*{Inductive Step}
+ \\We have that:
+
+\begin{table}[htp]
+  \centering
+  \begin{tabular}{cccc}
+    $(1+x)^{n+1}$ & $=$  & $(1+x)(1+x)^{n}$  &  \\
+    & $\geq$ & $(1+x)(1+nx)$ & From the inductive hypothesis\\
+    & $\geq$ & $1+(n+1)x+nx^{2}$ & \\
+  \end{tabular}
+  \end{table}
+ \\\\\\
+Thus so far we have that: $$(1+x)^{n+1} \geq 1+(n+1)x+nx^{2}$$
+And since $x^{2} \geq 0$ we know $nx^{2}\geq 0$ We have that: $$1+(n+1)x+nx^{2}\geq 1+(n+1)x$$
+Since we previously established that $(1+x)^{n+1}\geq 1+(n+1)x+nx^{2}$ we have that:
+$$(1+x)^{n+1}\;\;\geq\;\; 1+(n+1)x+nx^{2}\;\;\geq\;\; 1+(n+1)x$$
+And consequentialy:
+$$(1+x)^{n+1}\;\;\geq\;\; 1+(n+1)x$$
+\subsubsection*{Conclusion}
+We have shown that $(1+x)^{n}\geq 1+nx$ for all $n\geq 1$. Which completes the proof $\square$
+\subsection*{b)}
+We will start by making the following substitutions: 
+$$y=\frac{1}{2}(1+x)\;\;\;\;\;\;\;\;\;\;1-y=\frac{1}{2}(1-x)\;\;\;\;\;\;\;\;\;\;y^{n}=\frac{1}{2^{n}}(1+x)^{n}\;\;\;\;\;\;\;\;\;\;(1-y)^{m}=\frac{1}{2^{m}}(1-x^{m})$$
+Then we can substitue them into the equality: $$\begin{aligned}
+    \frac{2^{n}y^{n}}{n}+\frac{2^{m}(1-y)^m}{m}&\geq \frac{1}{n}+\frac{1}{m}\\
+    \frac{2^{n}\frac{1}{2^{n}}(1+x)^{n}}{n}+\frac{2^{m}\frac{1}{2^{m}}(1-x^{m})}{m}&\geq \frac{1}{n}+\frac{1}{m}\\
+    \frac{(1+x)^{n}}{n}+\frac{(1-x^{m})}{m}&\geq \frac{1}{n}+\frac{1}{m}\\
+\end{aligned}$$
+Now that we have the re-written inequality we can prove it using the information form part (a), we have: $$(1+x)^{n}\geq 1+nx\;\;\;\;\;\;(1-x)^{m}\geq 1-mx$$
+Then we divide them both by $n$ and $m$ respectively: $$\frac{(1+x)^{n}}{n}\geq \frac{1}{n}+x\;\;\;\;\;\;\;\frac{(1-x)^{m}}{m}\geq \frac{1}{m}-x$$And then we combine them:
+$$\frac{(1+x)^{n}}{n}+\frac{(1-x)^{m}}{m}\geq\frac{1}{n}+\cancel{x}\frac{1}{m}\cancel{-x}$$Finally we have: $$\frac{(1+x)^{n}}{n}+\frac{(1-x)^{m}}{m}\geq\frac{1}{n}+\frac{1}{m}$$Which completes the proof $\square$
+\newpage
+\section*{Question 2:}
+We begin by checking small values of $n$:\\
+
+$n=1$:
+$$(1+1)!=2!=2\;\;\;\;\;\;\text{and}\;\;\;\;\;\;(1+3)^{3}=4^{3}=64$$
+Here $2<64$ thus the inequality does not hold.
+
+$n=2$:
+$$(2+1)!=3!=6\;\;\;\;\;\;\text{and}\;\;\;\;\;\;(2+3)^{3}=5^{3}=125$$
+Here $6<125$ thus the inequality does not hold.
+
+$n=3$:
+$$(3+1)!=4!=24\;\;\;\;\;\;\text{and}\;\;\;\;\;\;(3+3)^{3}=6^{3}=216$$
+Here $24<216$ thus the inequality does not hold.
+
+$n=4$:
+$$(4+1)!=5!=120\;\;\;\;\;\;\text{and}\;\;\;\;\;\;(4+3)^{7}=4^{3}=343$$
+Here $120<343$ thus the inequality does not hold.
+
+$n=5$:
+$$(5+1)!=6!=720\;\;\;\;\;\;\text{and}\;\;\;\;\;\;(5+3)^{3}=8^{3}=512$$
+Here $720>512$ thus the inequality is satisfied.\\Now it suffices to prove that for all $n\geq 5$ that $$(n+1)!\geq (n+3)^{3}$$ We will proceed by applying induction on $n$
+\subsubsection*{Basis}
+The basis has already been proved above, the equality holds for $n=5$
+
+\subsubsection*{Inductive Hypothesis} 
+We assume that the following is true for all $n\geq 5$ $$(n+1)!\geq (n+3)^{3}$$
+
+\subsubsection*{Inductive Step}
+We want to show that the inequality holds for all values of $n+1$ where $n\geq 5$:
+\begin{table}[htp]
+\centering
+\begin{tabular}{rclc}
+  $((n+1)+1)!$ & $\geq$  & $((n+1)+3)^{3}$  &   \\
+  $(n+2)!$ & $\geq$  & $(n+4)^{3}$  &   \\
+  $(n+2)(n+1)!$ & $\geq$  & $(n+4)^{3}$  &   \\
+  $(n+2)(n+3)^{3}$ & $\geq$  &  $(n+4)^{3}$ & From the inductive hypothesis  \\
+\end{tabular}
+\end{table}
+ \\\\\\
+We can see that if we expanded the LHS of the equality it would have a leading term of $n^{4}$ and the RHS would have a leading term of $n^{3}$ thus we can say that the equality is satisifed for $n+1$
+
+\subsubsection*{Conclusion}
+We have shown that $(n+1)! \geq (n+3)^{3}$ is true for all $n\geq 5$ which completes the proof $\square$
+\newpage
+\section*{Question 3:}
+We prove the definition by applying induciton on $n$
+
+\subsubsection*{Base Case}
+We prove that the relation is true for $n=1$
+\begin{table}[htp]
+\centering
+\begin{tabular}{cc}
+  \textbf{LHS} & \textbf{RHS}  \\
+  $f_{1}^{2}$ & $f_{1}f_{2}$  \\
+  $1^{2}$& $1\cdot 1$\\
+  $1$&$1$
+\end{tabular}
+\end{table}
+ \\\\\\
+We can see that the LHS = RHS thus the definition holds for the base case of $n=1$
+
+\subsubsection*{Inductive Hypothesis}
+We assume that the definition: $$f_{1}^{2}+f_{2}^{2}+\dots+f_{k}^{2}=f_{k}f_{k+1}$$
+holds for all values of $n\geq 1$
+
+\subsubsection*{Inductive Step}
+We need to prove that the statement holds for $n+1$, we start with the LHS:
+$$\begin{aligned}
+f_{1}^{2}+f_{2}^{2}+\dots+f_{k}^{2}+f_{k+1}^{2} &\\
+=f_{k}f_{k+1}+f_{k+1}^{2} & \text{   From the inductive hypothesis}\\
+=f_{k+1}(f_{k}+f_{k+1})\\
+=f_{k+1}(f_{k+2}) & \text{     From the definition of the fibbonaci sequance}
+\end{aligned}$$
+We have shown that the definition holds by using the inductive hypothesis and the definition of the fibbonaci sequence.
+\subsubsection*{Conclusion}
+We have shown that the definition:$$f_{1}^{2}+f_{2}^{2}+\dots+f_{k}^{2}=f_{k}f_{k+1}$$ is true for all values of $n\geq 1$
+\newpage
+\section*{Question 4:}
+\subsection*{a)}
+To prove that: $$\frac{1}{1\cdot 2}+\frac{1}{2\cdot 3}+\dots+\frac{1}{n\cdot (n+1)}=\frac{n}{n+1}$$
+We apply induction on $n$
+\subsubsection*{Basis:}
+We prove that the formula holds for $n=1$
+\begin{table}[htp]
+  \centering
+  \begin{tabular}{cc}
+    \textbf{LHS} & \textbf{RHS}  \\
+    $\frac{1}{1\cdot 2}$ & $\frac{1}{(1)+1}$  \\
+    $\frac{1}{2}$& $\frac{1}{2}$
+  \end{tabular}
+  \end{table}
+   \\\\\\
+  We see that the LHS = RHS thus the formula holds for the base case
+
+\subsubsection*{Inductive Hypothesis}
+We assume that for any $n\geq 1$ that:$$\frac{1}{1\cdot 2}+\frac{1}{2\cdot 3}+\dots+\frac{1}{n\cdot (n+1)}=\frac{n}{n+1}$$
+\subsubsection*{Inductive Step:}
+We show that the formula is true for $n+1$ or that: $$\frac{1}{1\cdot 2}+\frac{1}{2\cdot 3}+\dots+\frac{1}{n\cdot (n+1)}+\frac{1}{(n+1)\cdot (n+2)}=\frac{n+1}{n+2}$$
+We start with the LHS:
+\begin{table}[htp]
+\centering
+\begin{tabular}{cclc}
+  $\frac{1}{1\cdot 2}+\frac{1}{2\cdot 3}+\dots+\frac{1}{n\cdot (n+1)}+\frac{1}{(n+1)\cdot (n+2)}$ & $=$  &  $\frac{n}{n+1}+\frac{1}{(n+1)\cdot (n+2)}$ & From the inductive hypothesis  \\
+   & $=$  & $\frac{n(n+2)+1}{(n+1)(n+2)}$  &   \\
+   & $=$  & $\frac{n^{2}+2n+1}{(n+1)(n+2)}$  &   \\
+   & $=$  & $\frac{(n+1)^{2}}{(n+1)(n+2)}$  &   \\
+   & $=$  & $\frac{n+1}{n+2}$
+\end{tabular}
+\end{table}
+ \\\\\\
+We have shown that: $$\frac{1}{1\cdot 2}+\frac{1}{2\cdot 3}+\dots+\frac{1}{n\cdot (n+1)}+\frac{1}{(n+1)\cdot (n+2)}=\frac{n+1}{n+2}$$
+
+\subsubsection*{Conclusion}
+We have now shown that for all values of $n\geq 1$ that: $$\frac{1}{1\cdot 2}+\frac{1}{2\cdot 3}+\dots+\frac{1}{n\cdot (n+1)}=\frac{n}{n+1}$$
+\subsection*{b)}
+\subsubsection*{i)}
+Let us first compute the first few values:
+\begin{enumerate}
+  \item $t_{0}=1$
+  \item $t_{1}=1$
+  \item $t_{2}=t_{1}-\frac{t_{0}}{2}=1-\frac{1}{2}=\frac{1}{2}$
+  \item $t_{3}=t_{2}-\frac{t_{1}}{3}=\frac{1}{2}-\frac{1}{3}=\frac{1}{6}$
+  \item $t_{4}=t_{3}-\frac{t_{2}}{4}=\frac{1}{6}-\frac{1/2}{4}=\frac{1}{6}-\frac{1}{8}=\frac{1}{24}$
+\end{enumerate}
+Based on the pattern web observed, we conjecture that: $$t_{n}=\frac{1}{n!}$$For $n\geq 0$
+\newpage
+\subsubsection*{ii)}
+We will prove the formula by applying induction on $n$
+\subsubsection*{Base Cases}
+For $n=0$ $$t_{0}=1=\frac{1}{0!}$$
+For $n=1$ $$t_{1}=1=\frac{1}{1!}$$
+Which both match our formula thus the formula holds for the base cases of $n=0$ and $n=1$
+
+\subsubsection*{Inductive Hypothesis}
+We assume that for all $n\geq 2$ that: $$t_{n}=\frac{1}{n!}\;\;\;\;\;\;\;\text{and}\;\;\;\;\;\;\;t_{n-1}=\frac{1}{(n-1)!}$$
+\subsubsection*{Inductive Step}
+We aim to show that the formula holds for $n+1$ or that: $$t_{n+1}=\frac{1}{(n+1)!}$$
+We start with the given recursive definition$$t_{n+1}=t_{n}-\frac{t_{n-1}}{n+1}$$
+Then we make substitutions from the inductive hypothesis
+\begin{table}[htp]
+\centering
+\begin{tabular}{cclc}
+  $t_{n}-\frac{t_{n-1}}{n+1}$ &  $=$ &  $\frac{1}{n!}-\frac{\frac{1}{(n-1)!}}{n+1}$ &   \\
+   & $=$  & $\frac{1}{n!}-\frac{1}{n+1}\frac{1}{(n-1)!}$  &   \\
+   & $=$  & $\frac{1}{n(n-1)!}-\frac{1}{(n+1)(n-1)!}$  &   \\
+   & $=$  & $\frac{(n+1)}{n(n-1)!(n+1)}-\frac{n}{n(n+1)(n-1)!}$  &   \\
+   & $=$ & $\frac{n+1-n}{n(n-1)!(n+1)}$&\\
+   & $=$ & $\frac{1}{n!(n+1)}$&\\
+   & $=$ & $\frac{1}{(n+1)!}$&
+\end{tabular}
+\end{table}
+ \\\\\\
+Thus we have shown that $t_{n+1}=\frac{1}{(n+1)!}$ using the recursive definition and the inductive hypothesis
+\subsubsection*{Conclusion}
+We have shown that for all $n\geq 0$ that: $$t_{n+1}=\frac{1}{(n+1)!}$$
+\newpage
+\section*{Question 5:}
+\subsubsection*{a)}
+Since $k!$ is the product of all positive integers from 1 to $k$, $k!$ is divisible by each integer $d$ in $\left\{ 2,3,\dots,k \right\} $
+because each $d$ is a factor of $k!$. 
+
+If we consider $k!-1$ Since $k!$ is divisible by $d$ it leaves a remained of 0 when divided by any $d$ thus, $k!-1$ will leave a remainder of $-1$, 
+since the convention is not to use negative numbers as a remainder the remainder will be $d-1$
+
+\subsubsection*{b)}
+If we have $k=p$ a prime number and examine $p!-1$, by part $a$ $p!-1$ is not divisible by and integer $d$ in $\left\{ 2,3,\dots,p \right\} $.
+Since $p!-1$ is an integer greater than 1, it must have a prime factor, for example we say it has a prime factor $q$, since it is not divisible by any integer
+in $d$ we know $q$ is not in $d$ and must thus be larger than $p$. By definition $q$ is prime since we declared it was a prime factor of $p!-1$
+
+\subsubsection*{c)}
+Suppose for contradition that there is a largest prime number, call it $p$. According to part (b), for any prime $p$, there exsts a prime $q>p$. This contradictions the assumption
+that $p$ is the largest prime, because part (b) guarantees the existence of a prime number larger than $p$
+
+\subsubsection*{d)}
+Since part $c$ shows that there is no largest prime number, it follows that the primes do not stop at any finite value. For any prime $p$, there will always be a prime
+number larger than $p$, thus the sequence of primes continues infinitely. 
+\end{document}
