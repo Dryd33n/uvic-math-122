@@ -1,0 +1,49 @@
+\documentclass{article}
+\usepackage[legalpaper, portrait, margin=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\title{Math 122. I.C.A 10}
+\author{Dryden Bryson}
+\date{October 30, 2024}
+
+
+\begin{document}
+\maketitle
+\newpage
+\section*{Question 1:}
+First we find the prime factorization of $!12$:
+$$!12 = 12 \times11 \times10 \times9 \times8 \times7 \times6 \times5 \times4 \times3 \times2$$
+Then we get the prime factorization of each non-prime number in the factorization:
+$$!12 = (3 \times 2^{2})\times 11\times (5\times 2) \times (3^{2})\times (2^{3})\times 7\times (3\times 2)\times 5\times (2^{2})\times 3\times 2$$
+Then collecting the terms: 
+$$!12 = 11\times 7 \times 5 \times 3^{5}\times 2^{10}$$
+Now we can square both sides and simplify using the distributive propery:
+
+$$\begin{aligned}
+    (!12)^{2} &= (11\times 7 \times 5 \times 3^{5}\times 2^{10})^{2}\\
+     &= 11^{2}\times 7^{2} \times 5^{2} \times 3^{5\times 2}\times 2^{10\times 2}\\
+     &= 11^{2}\times 7^{2} \times 5^{2} \times 3^{10}\times 2^{20}
+\end{aligned}$$
+
+\section*{Question 2:}
+Since $a\vert b$ and $b\vert c^{2}$ there exists integers $k$ and $m$ such that $a\times k = b$ and $b\times m = c^{2}$.
+We have that 
+
+$$\begin{aligned}
+    c^{2}&=b\times m  \\ 
+    \left( c^{2} \right)^{2}&=(b\times m)^{2} \\
+    c^{4} &= b^{2} \times  m^{2}
+\end{aligned}$$
+Let us know substitute $b$ for $b=a\times k$:
+
+$$\begin{aligned}
+    c^{4} &= b^{2}\times m^{2}\\
+    c^{4} &= (b\times b)\times m^{2}\\
+     &= \left(  (a\times k)\times  b\right) \times m^{2}\\
+     &= (a\times b)(k\times m^{2})\\
+\end{aligned}$$Thus we have that $c^{4}=(a\times b)\times n$ for $n=(k\times m^{2})$ thus: $$ab\vert c^{4}\;\;\;\;\text{or}\;\;\;\;c^{4}=(ab)n$$
+Since $n=(k\times m^{2})$ is an integer we conclude that $ab\vert c^{4}$. $\square$ 
+\newpage
+
+\end{document}
