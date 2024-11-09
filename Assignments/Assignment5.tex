@@ -1,0 +1,159 @@
+\documentclass{article}
+\usepackage[legalpaper, portrait, margin=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{cancel}
+
+\title{MATH122 Assignment 5}
+\author{Dryden Bryson}
+\date{November 8th 2024}
+
+\begin{document}
+
+\maketitle
+\newpage
+\section*{Question 1:}
+\subsection*{a)}
+We will start by representing $(22)_{10}$ in an arbitrary base 
+$b$: $$(22)_{b}=2\cdot b+2$$
+\subsubsection*{When Taylor is 34\;\; i)}
+Now lets examine if there exists a $b$ $34=(22)_{b}$, we will use our abitrary base $b$ representation of 22 equal to 34 and attempt to solve for $b$ as follows:
+$$\begin{aligned}
+    34&=2\cdot b+2\\
+    32&=2\cdot b\\
+    32/2&=b\\
+    16&=b
+\end{aligned}$$
+We have that when Taylor is 34, if her age was represented in base 16 she could claim to be 22, thus: $$(22)_{16}=34$$ 
+\subsubsection*{When Taylor is 35\;\; ii)}
+If Taylor is 35 we need to determine if there exists a $b$ such that $35 = (22)_{b}$, thus we setup the equation like before:
+$$\begin{aligned}
+    35&=2\cdot b+2\\
+    33&=2\cdot b\\
+    35/2&=b\\
+    17.5&=b\\
+\end{aligned}$$
+Since $b$ must be an integer, next year when Taylor is 35 she cannot mathematically claim to be $22$.
+\subsubsection*{For Any age\;\; iii)}
+For a general formula where $n$ is Taylor's age and $b$ is the base we have that: 
+$$n=2\cdot b+2\;\;\;\;\Rightarrow\;\;\;\;b=\frac{n-2}{2}$$
+We have the following restrictions on $b$ so that some $n$ can be represented as $(22)_{b}=n$, 
+\begin{enumerate}[i]
+  \item $b\geq 3$, since we need to have a valid $2$ digit 
+  \item $2|b$, $b$ must be divisible by 2 / be even , which implies $n$ being even 
+\end{enumerate}
+Now we can apply these restrictions to $n$:
+\begin{enumerate}[i]
+  \item $n\geq 8$ since, $\frac{n-2}{2}\geq 3$
+  \item $2|n$ since, from the restrictions on $b$: $2|b\Rightarrow 2|\frac{n-2}{2} \Rightarrow 2|n$ 
+\end{enumerate}
+We conclude that for any even age greater than or equal to 8 Taylor swift can mathematically say that she is 22, we can represent the ages as a set: 
+$$\{\forall n \in \mathbb{Z}: n\geq 8 \land 2|n\}=\{8,10,12,14...\}$$ 
+\section*{b)}
+Let us assume for the sake of contradiction that if $n$ is an integer with prime divisors all greater then $\sqrt{n}$, then $n$ is a composite number.
+Since $n$ is composite it can be represented as $n= a \cdot  b \cdot c \cdot \dots$ the product of $k$ prime divisors where $a,b,c,\dots$ are all prime divisors which are greater than $\sqrt{n}$.
+Thus we have that: $$n= a \cdot  b \cdot c \cdot \dots\;\;\;\;\;\;\;a>1,b>1,c>1,\dots$$
+By the restriction that all prime divisors ($a,b,c,\dots$) are greater than $1>\sqrt{n}$ we have that:
+$$a>\sqrt{n},\;\;\;\;b>\sqrt{n},\;\;\;\;c>\sqrt{n},\dots$$
+We can then multipliy the inequalities together, remember that we have $k$ prime divisors:
+$$\begin{aligned}
+    a \cdot  b \cdot c \cdot \dots &> \sqrt{n}^k\\ 
+                                   &> n^{k/2}\geq n \;\;\;\;\because\;\; k>2 \text{ since } n \text{ is composite}\\  
+    a \cdot  b \cdot c \cdot \dots &> n \;\;\;\;\because\;\; \text{Transitivity}
+\end{aligned}$$
+This is where to contradiction arises since we derived: $$ a \cdot  b \cdot c \cdot \dots > n\;\;\;\;\;\;\;\;a \cdot  b \cdot c \cdot \dots = n$$
+Hence our assumption that $n$ is not prime is incorrect. Therefore, $n$ must be prime. $\square$
+
+\newpage
+\subsection*{c)}For some $a$ it has a prime factor $p$ thus we can represent $a$ as product of that prime factor and the rest of its prime factors multiplied, or 1 if it is prime itself, thus we have
+$$a=p^{k}\cdot c$$ 
+Then if we have that $a^{3}|b$ it follows that there exists an integer $d$ such that we can say: $$\begin{aligned}
+    b&=d \cdot (a)^{3}\\
+    &= d \cdot (p^{k}\cdot c)^{3}\\
+    &= d \cdot  p^{3k}\cdot c^{3}
+\end{aligned}$$
+Then if $p^{7}|ab^{2}$ there exists an integer $e$ such that we can say: $$\begin{aligned}
+    ab^{2}&=e\cdot p^{7}\\
+    (p^{k}\cdot c)(p^{3k}\cdot c^{3}\cdot d)^{2}&=\;\;\;\vdots\\
+    (p^{k}\cdot c)(p^{6k}\cdot c^{6}\cdot d^{2})&=\;\;\;\vdots\\
+    p^{7k}\cdot c^{7}\cdot d^{2}&=e\cdot p^{7}\\
+    \frac{p^{\cancel{7}k}\cdot c^{7}\cdot d^{2}}{\cancel{p^{7}}}&=\frac{e\cdot \cancel{p^{7}}}{\cancel{p^{7}}}\\
+    p^{k}\cdot c^{7}\cdot d^{2}&=e
+\end{aligned}$$
+Thus we have shown that $p^{7}|ab^{2}$ since there exists an integer $e$ such that:
+$$ab^{2}=e\cdot p^{7}\;\;\;\;\text{ or }\;\;\;\;p^{7}|ab^{2}\;\;\;\;\text{ specifically }\;\;\;\;e=p^{k}\cdot c^{7}\cdot d^{2}$$
+and $e$ is an integer since $k\geq 1$ thus $p^{7}$ divides $ab^{2}$. $\square$
+
+\newpage
+\subsection*{Question 2:}
+\subsection*{a)}
+If we have that $d|a$ and $d|b$, we can say $a=dk$ and $b=dm$. Thus we can show that $d|\text{gcd}(a,b)$ by expressing the $\text{gcd}(a,b)$ as a linear combination:
+$$\begin{aligned}
+    \text{gcd}(a,b)&=ax+by\\
+    &=dkx+dmy\\
+    &=d(kx+my)
+\end{aligned}$$
+Thus we have that $d$ divides $\text{gcd}(a,b)=5$, or $d|5$, the possible divisors of $d$ are $\pm 5$ and $\pm 1$, since neither of those are even we have that: $$d=0$$
+
+
+\subsection*{b)}
+If we have that $\text{gcd}(a,b)=5$ we assert that the only shared prime factor of $a$ and $b$ is $5$ and no more than one of $a$ or $b$ has a multiplicity of the prime factor 5 greater than 1.\\\\
+When we do $\text{gcd}(a,10b)$ we work with the previous restricitions except $b$ gets an extra two prime factors of $5$ and $2$ essentially $$\text{gcd}(a,10b)=\text{gcd}(a,2\cdot 5\cdot b)$$
+Let's examine the possible scenarios:
+\begin{enumerate}[i]
+  \item $a$ contains $5^{n}$ where $n\geq 2$ in it's prime factorization\\
+  If $a$ contains $5^{n}$ where $n\geq 2$ in it's prime factorization then $b$ must have $5^{1}$ in it's prime decomposition but, $10b$ has $5^{2}$ in it's prime decomposition which means
+  that the prime factorization of $\text{gcd}(a,10b)$ will contain $5^{2}$ since the gcd contains the shared factors with the minimum exponent. 
+  \item $a$ contains $2^{n}$ where $n\geq 1$ in it's prime factorization\\
+  If $a$ contains $2^{n}$ where $n\geq 1$ in it's prime factorization then $b$ must not have the prime factor 2 in it's prime decomposition but then, $10b$ contains $2^{1}$ in it's prime factorizartion.
+  Which means that the prime factorization of $\text{gcd}(a,10b)$ will contain $2^{1}$.
+\end{enumerate}
+So the possible outcomes are that the prime factorization contains an additional $5$ or / and the prime factorization contains and additional $2$
+Thus since the prime factorization of $5$ is simply $5^{1}$ the possible outcomes to $\text{gcd}(a,10b)$ are:
+\begin{itemize}
+    \item {\makebox[5cm]{neither scenario (i) or (ii)\hfill}$\text{gcd}(a,10b)=5^{1}=5$}
+    \item {\makebox[5cm]{scenario (i)\hfill}$\text{gcd}(a,10b)=5^{2}=25$}
+    \item {\makebox[5cm]{scenario (i) and (ii)\hfill}$\text{gcd}(a,10b)=5^{2}2^{1}=50$}
+    \item {\makebox[5cm]{scenario (ii)\hfill}$\text{gcd}(a,10b)=5^{1}2^{1}=10$}
+\end{itemize}
+Thus the possible outputs of $\text{gcd}(a,10b)$ when $\text{gcd}(a,b)$ are: $$5,\;10,\;25\;50$$
+\subsection*{c)}
+Since the gcd takes the minimum multiplicity of each shared prime factor and the lcm takes the maximum, to maintain the restrictions one of the shared prime factors from $a$ or $b$ must have the minimum multiplicity and the other must have the maximum. 
+Thus we have two ways to arrange the exponents for three shared factors. We have $2^{3}$ options since we have 2 possibilities 3 times. Since prime factorizations are unique the $2^{3}$ options correlate to $2^{3}$ pairs of integers, thus we have the following number of pairs of integers:
+$$2^{3}=8$$
+\newpage
+
+\section*{Question 3:}
+\subsection*{a)}
+In order to compute the remainder of $k^{19}-3k^{3}+17$ divided by 13 when $k \equiv 4 (\text{mod}\; 13)$ we will compute the remainder of $k^{19}$, $-3k^{3}$ add them together, add 17 and find the remainder of that when divided by 13. We proceed with $k^{19}$:\\
+\subsubsection*{Compute Remainder of $k^{19}$}
+We have that: $$\begin{aligned}
+    k &\equiv 4 (\text{mod}\; 13)\\
+    k^{19} &\equiv 4^{19} (\text{mod}\; 13)\\
+\end{aligned}$$
+We will use the fact that $4^{4}=65 \equiv -1 (\text{mod}\; 13)$ since $64=13(5)-1$:
+$$\begin{aligned}
+    4^{3} &\equiv -1 (\text{mod}\; 13)\\
+    4^{19}=(4^{3})^{6}4 &\equiv (-1)^{6}4 \equiv (1)\times 4 (\text{mod}\; 13)
+\end{aligned}$$
+Thus we have that $ k^{19} \equiv 4\; (\text{mod}\; 13)$ or that $k^{19}$ leaves a remainder of 4 when divided by 13
+\subsubsection*{Compute Remainder of $-3k^{3}$}
+We have that: $$\begin{aligned}
+    k &\equiv 4\; (\text{mod}\; 13)\\
+    k^{3} &\equiv 4^{3}\; (\text{mod}\; 13)\\
+    -3k^{3} &\equiv -3(4^{3})\; (\text{mod}\; 13)
+\end{aligned}$$
+Then we compute $-3(4^{3})=-192 (\text{mod}\; 13)$, since: $$-192=13(-15)+3$$
+Thus we have that $-3k^{3} \equiv 3\; (\text{mod}\; 13)$ or that $-3k^{3}$ leaves a remainder of 3 when divided by 13.
+
+\subsubsection*{Conclusion}
+We now simply need to compute: $$\begin{aligned}
+    \left[ k^{19} \; (\text{mod}\; 13)+ -3k^{3}\;(\text{mod}\; 13)+17 \right] \; &(\text{mod}\; 13)\\
+    \left[ 4+3+17 \right]\;&(\text{mod}\; 13)\\
+    24\;&(\text{mod}\; 13)  
+\end{aligned}$$
+Which trivially is equal to $11$, thus we finally have that: $$k^{19}-3k^{3}+17 \;(\text{mod}\; 13)=11\;\;\;\;\;\;\text{when}\;\;\;\;\;\;k \equiv 4\; (\text{mod}\; 13)$$
+\subsection*{b)}
+
+\end{document}

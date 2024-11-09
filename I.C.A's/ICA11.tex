@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage[legalpaper, portrait, margin=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\title{I.C.A 11}
+\author{Dryden Bryson}
+\date{November 8th 2024}
+
+\begin{document}
+
+\maketitle
+\section*{Question 1:}
+In order to find the GCD with the euclidian algorithm we need to perform repeated division and taking the remainder, thus we perform:
+$$\text{gcd}(731,578)$$
+$$\begin{aligned}
+    731&=578\times 1+153\\
+    578&=153\times 3+119\\
+    153&=119\times 1+34\\
+    119&=34\times 3+17\\
+    34&=17\times 2+0\\
+\end{aligned}$$
+Since we have that: $34 \div 17$ has a remainder of zero we conclude that: $$\text{gcd}(731,578)=17$$
+\section*{Question 2:}
+We need to find integers $x$ and $y$ such that: $$17=731x+578y$$
+We will use our work from the euclidian algorithm starting with the last division statement with a non-zero remainder. We have that: $$119=34\times 3+17 \;\;\;\;\rightarrow\;\;\;\; 17= 119-3\times 34$$
+Substituting in from equation 3 to represent 17 in terms of 119 and 153 we have that: 
+$$\begin{aligned}
+    17&= 119-3\times 34\\
+    &=119-3(153-119)\\
+    &=119-3\times 153+3\times 119 \\
+    &=4\times 119-3\times 153
+\end{aligned}$$
+Now we substitute from equation 2 to represent 119 in terms of 578 and 153
+$$\begin{aligned}
+    17 &=4\times 119-3\times 153\\
+    &=4(578-3\times 153)-3\times 153\\
+    &= 4\times 578-12\times 153-3\times 153\\
+    &=4\times 578 -15\times 153
+\end{aligned}$$
+Now we substitute from the first question to represent 153 in terms of 731 and 578, we have that:
+$$\begin{aligned}
+    17 &=4\times 578 -15\times 153\\
+    &= 4\times 578-15(731-578)\\
+    &= 4\times 578-15\times 731+15\times 578\\
+    &= 19\times 578-15\times 731
+\end{aligned}$$
+Now that 17 is represented in terms of 578 and 731 we have that: $$\begin{aligned}
+    17=731x+578y\\
+    x=-15\;\;\;\;\;\;\;y=19
+\end{aligned}$$
+\section*{Question 3:}
+We use the relation: $$\text{lcm}(a,b)=\frac{|a\cdot b|}{\text{gcd}(a,b)}$$
+Thus we have that: $$\text{lcm}(731,578)=\frac{|731\cdot 578|}{17}=24854$$
+
+\end{document}
