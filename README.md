@@ -1,3 +1,11 @@
+# MATH 122
+LaTex for assignment for Math 122. Covering topics such as:
+- Logic and Proofs: Truth tables, logical equivalences, induction, and quantified reasoning.
+- Set Theory: Operations, Venn diagrams, and cardinality.
+- Number Theory: Modular arithmetic, gcd/lcm, and prime numbers.
+- Combinatorics: Counting principles and inclusion-exclusion.
+- Recursion: Fibonacci sequences and recursive proofs.
+
 ### [Assignment 1](Assignments/Assignment1.pdf)
 #### Question 1
 - Truth tables for logical statements.
